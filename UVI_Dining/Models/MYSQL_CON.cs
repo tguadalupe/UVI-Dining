@@ -12,7 +12,7 @@ namespace UVI_Dining.Models
         public string LName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public string status { get; set; }
+        public string user_Status { get; set; }
         public string campus_id { get; set; }
 
         public MYSQL_CON()
@@ -50,7 +50,7 @@ namespace UVI_Dining.Models
             cmd.Parameters.AddWithValue("@LName", LName);
             cmd.Parameters.AddWithValue("@Email", Email);
             cmd.Parameters.AddWithValue("@Password", Password);
-            cmd.Parameters.AddWithValue("@user_Status", status);
+            cmd.Parameters.AddWithValue("@user_Status", user_Status);
 
             
 

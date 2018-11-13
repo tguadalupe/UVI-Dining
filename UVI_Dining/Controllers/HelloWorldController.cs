@@ -45,7 +45,7 @@ namespace UVI_Dining.Controllers
             LName = Request.Form["LName"],
             Email = Request.Form["Email"],
             Password = Request.Form["Password"],
-            status = Request.Form["user_Status"]
+            user_Status = Request.Form["user_Status"]
         };
            
           testing.admin_login();
