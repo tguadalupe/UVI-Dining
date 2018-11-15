@@ -1,8 +1,9 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
-
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Data;
+
 namespace UVI_Dining.Models
 {
     public class MYSQL_CON
@@ -26,7 +27,7 @@ namespace UVI_Dining.Models
             //Rhonda connection 
             //myConnectionString = "server=127.0.0.1;uid=root;" +
             //  "pwd=PUTyourDBpassword;database=UVI_Dining";
-          
+
             try
             {
                 Conn = new MySqlConnection(myConnectionString);
@@ -38,13 +39,13 @@ namespace UVI_Dining.Models
             }
 
         }
-        
-       public void admin_login()
-        {
-          //  var campus_loc = Request.Form["Name"];
 
-            var cmd = Conn.CreateCommand()as MySqlCommand;
-           // MySqlCommand cmdd = new MySqlCommand("SELECT campus", Conn);
+        public void admin_login()
+        {
+            //  var campus_loc = Request.Form["Name"];
+
+            var cmd = Conn.CreateCommand() as MySqlCommand;
+            // MySqlCommand cmdd = new MySqlCommand("SELECT campus", Conn);
             cmd.CommandText = "INSERT INTO admins(FName,LName,Email,Password,user_Status,campus_id) values(@FName,@LName,@Email,@Password,@user_Status,1)";
             cmd.Parameters.AddWithValue("@FName", FName);
             cmd.Parameters.AddWithValue("@LName", LName);
@@ -67,25 +68,43 @@ namespace UVI_Dining.Models
             //cmd.Parameters.AddWithValue("@user_Status", status);
             //cmd.Parameters.AddWithValue("@campus_id", campus_loc);
             cmd.ExecuteNonQuery();
-            
+
         }
-        //For login
+        
+
+        //For login trying
         public void logtest()
         {
             var cmd = Conn.CreateCommand() as MySqlCommand;
             cmd.CommandText = "SELECT * FROM admins WHERE Email=@Email AND Password=@Password ";
             cmd.Parameters.AddWithValue("@Email", Email);
             cmd.Parameters.AddWithValue("@Password", Password);
-            
+
+   
+            using (var r = cmd.ExecuteReader())
+            {
+                while(r.Read())
+                {
+                    Email = r["Email"].ToString();
+                    Password = r["Password"].ToString();
+                    Console.WriteLine("EMAIL : {0}\n    {1}", Email);
+                    Console.WriteLine("Password : {0}\n    {1}", Password);
+
+                }
+            }
+        }
+    }
+    }
          
             
-            cmd.ExecuteNonQuery();
-
-            
-        }
+            //  cmd.ExecuteNonQuery();
         
-    }
-}
+
+
+       
+        
+    
+
 
 
 //NOTE: cmd

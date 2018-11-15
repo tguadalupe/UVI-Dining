@@ -32,12 +32,12 @@ namespace UVI_Dining.Controllers
                
             };
             //this is where I'm having problem
-            if (model.Email == null && model.Password == null)
+            
+            if (model.Email == model.Email && model.Password == model.Password)
             {
-                Response.Redirect("login.cshtml");
+                return View("Login");
             }
-          
-
+ 
             log.logtest();
             return View();
         }
