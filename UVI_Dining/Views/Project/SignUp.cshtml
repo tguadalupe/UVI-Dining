@@ -30,19 +30,19 @@
             <p class="paragraph"> Already have an admin account? <a href="/Project/login">Sign in.</a> </p>
 
             <label for="Fname"><b>First Name</b></label>
-            <input type="text" name="FName" class="ipt" value="">
+            <input type="text" name="FName" class="ipt" value="" required>
 
             <label for="Lname"><b>Last Name</b></label>
-            <input type="text" name="LName" class="ipt" value="">
+            <input type="text" name="LName" class="ipt" value="" required>
 
             <label for="Email"><b>Email</b></label>
-            <input type="email" name="Email" class="ipt" value="">
+            <input type="email" name="Email" class="ipt" value="" required>
 
             <label for="Password"><b>Password</b></label>
-            <input type="password" name="Password" class="ipt" value="">
+            <input type="password" name="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}" class="ipt" value="" required title ="Sorry, password must have one number, one capital and lowercase letter, and at least 8 or more characters.">
 
             <label for="user_Status"><b>Status</b></label>
-            <input type="text" name="user_Status" class="ipt" value="">
+            <input type="text" name="user_Status" class="ipt" value="" required>
 
             <label for="campus"><b>Campus</b></label>
             <input type="text" name="campus" class="ipt" required>
