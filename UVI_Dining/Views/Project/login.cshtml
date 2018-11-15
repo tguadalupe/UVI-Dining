@@ -1,28 +1,82 @@
-﻿
+﻿@{ Layout = ""; }
+
 @model UVI_Dining.Models.MYSQL_CON
 
 @{
     ViewData["Title"] = "Admin Login";
 
 }
-<h2>STT Admin Signup</h2>
-
-<h3>
-    This is STT LOGIN YES I HAVE TO DO THE FLIP THING
-</h3>
-<!--A quick form to test. Can change-->
-<form action="successTest" method="post">
-    <fieldset>
-        
-        email:<br>
-        <input type="text" name="Email" placeholder="Email" value="">
-        <br>
-        Password:<br>
-        <input type="text" name="Password" placeholder="password" value="">
-        <br>
 
 
 
-        <input type="submit" value="Submit">
-    </fieldset>
-</form> 
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="~/css/login.css" /> ‌
+
+</head>
+
+<body>
+
+    <div class="header">
+        <img src="~/images/uvilogo.png" alt="UVI logo" title="UVI logo" class="logo" />
+
+        <h3 class="h31">UVI Dining</h3>
+
+    </div>
+
+
+
+    <div class="navi1">
+        <a href="#hours">Hours of Operation</a>
+        <a href="#Location">Location</a>
+        <a href="/Project/SignUp">Register</a>
+        <a href="/Project/login">Sign in</a>
+    </div>
+
+
+
+    <div class="navi2">
+
+
+        <a href="#about">About Us</a>
+        <a href="#contactus">Contact</a>
+        <a href="#menu">Menu</a>
+        <a href="/Project/Index">Home</a>
+
+    </div>
+
+
+
+
+    <br id="greenbarheight"> </br>
+
+    <div id="greenbar"></div>
+
+
+    <br> </br>
+
+
+
+
+    <!--A quick form to test. Can change-->
+    <form action="successTest" method="post">
+
+        <div class="container">
+            <h2 class="h21">Admin Sign in</h2>
+
+
+            <label for="Email"><b>Email</b></label>
+            <input type="email" name="Email" placeholder="Email" value="" class="ipt" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" name="Password" placeholder="password" value="" class="ipt" required>
+
+
+
+
+            <input type="submit" value="Submit">
+
+        </div>
+    </form>
+
+</body>
