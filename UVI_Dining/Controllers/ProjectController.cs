@@ -14,6 +14,33 @@ namespace UVI_Dining.Controllers
         {
             return View();
         }
+        public IActionResult login()
+        {
+                  
+            return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult logtest(MYSQL_CON model)
+        {
+            var log = new MYSQL_CON()
+            {      
+                Email = Request.Form["Email"],
+                Password = Request.Form["Password"]
+               
+            };
+            //this is where I'm having problem
+            if (model.Email == null && model.Password == null)
+            {
+                Response.Redirect("login.cshtml");
+            }
+          
+
+            log.logtest();
+            return View();
+        }
         //FOR THE PROJECT 
 
 
@@ -35,9 +62,13 @@ namespace UVI_Dining.Controllers
                 Password = Request.Form["Password"],
                 user_Status = Request.Form["user_Status"]
             };
-
+           
             testing.admin_login();
 
+            return View();
+        }
+        public IActionResult successTest()
+        {
             return View();
         }
     }

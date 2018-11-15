@@ -14,7 +14,7 @@ namespace UVI_Dining.Models
         public string Password { get; set; }
         public string user_Status { get; set; }
         public string campus_id { get; set; }
-
+        object obj;
         public MYSQL_CON()
         {
 
@@ -23,10 +23,10 @@ namespace UVI_Dining.Models
             myConnectionString = "server=127.0.0.1;uid=root;" +
                 "pwd=123@Godisgood;database=UVI_Dining";
 
-             //Rhonda connection 
+            //Rhonda connection 
             //myConnectionString = "server=127.0.0.1;uid=root;" +
             //  "pwd=PUTyourDBpassword;database=UVI_Dining";
-
+          
             try
             {
                 Conn = new MySqlConnection(myConnectionString);
@@ -52,12 +52,6 @@ namespace UVI_Dining.Models
             cmd.Parameters.AddWithValue("@Password", Password);
             cmd.Parameters.AddWithValue("@user_Status", user_Status);
 
-            
-
-
-
-
-
 
 
             //cmd.CommandType = System.Data.CommandType.StoredProcedure;
@@ -73,6 +67,20 @@ namespace UVI_Dining.Models
             //cmd.Parameters.AddWithValue("@user_Status", status);
             //cmd.Parameters.AddWithValue("@campus_id", campus_loc);
             cmd.ExecuteNonQuery();
+            
+        }
+        //For login
+        public void logtest()
+        {
+            var cmd = Conn.CreateCommand() as MySqlCommand;
+            cmd.CommandText = "SELECT * FROM admins WHERE Email=@Email AND Password=@Password ";
+            cmd.Parameters.AddWithValue("@Email", Email);
+            cmd.Parameters.AddWithValue("@Password", Password);
+            
+         
+            
+            cmd.ExecuteNonQuery();
+
             
         }
         
