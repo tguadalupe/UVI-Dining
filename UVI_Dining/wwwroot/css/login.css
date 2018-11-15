@@ -1,0 +1,131 @@
+﻿body {
+    margin: 0;
+    background: whitesmoke;
+}
+
+
+
+div.header {
+    position: absolute;
+    top: 10px;
+    left: 9px;
+}
+
+.logo {
+    float: left;
+    height: 70px;
+    width: 70px;
+}
+
+
+
+.navi1 {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+    .navi1 a {
+        float: right;
+        padding: 10px;
+        font-size: 13px;
+        overflow: hidden;
+    }
+
+        .navi1 a:hover {
+            Opacity: 0.7;
+        }
+
+
+
+.navi2 {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+    .navi2 a {
+        float: right;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+        font-size: 17px;
+        background-color: gray;
+    }
+
+        .navi2 a:hover {
+            background-color: lightgrey;
+        }
+
+
+#greenbarheight {
+    display: block;
+    content: ""; 
+    margin-top: .2; 
+}
+
+#greenbar {
+    width: 99.7%;
+    margin: 10px auto;
+    background: #42f4bf;
+    border: 1px solid #41f4be;
+    height: 100px;
+}
+
+
+.container img {
+    float: left;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+}
+
+.container {
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 400px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.h21 {
+    margin-top: 2px;
+    text-align: center;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+
+.ipt {
+    width: 95%;
+    padding: 10px;
+    margin: 3px 0 13px 0;
+    border: none;
+    background: whitesmoke;
+}
+
+    .ipt:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+.btn {
+    margin: 0 auto;
+    margin-top: 8px;
+    display: block;
+    background-color: #42f4bf;
+    color: black;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 1;
+}
+
+    .btn:hover {
+        opacity: .8;
+    }
