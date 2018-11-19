@@ -39,13 +39,18 @@
             <input type="email" name="Email" class="ipt" value="" required>
 
             <label for="Password"><b>Password</b></label>
-            <input type="password" name="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}" class="ipt" value="" required title ="Sorry, password must have one number, one capital and lowercase letter, and at least 8 or more characters.">
+            <input type="password" name="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}" class="ipt" value="" required title="Sorry, password must have one number, one capital and lowercase letter, and at least 8 or more characters.">
 
             <label for="user_Status"><b>Status</b></label>
             <input type="text" name="user_Status" class="ipt" value="" required>
 
             <label for="campus"><b>Campus</b></label>
-            <input type="number" name="campus" class="ipt" required>
+            <br>
+            <br>
+            <!--   <input type="number" name="campus" class="ipt" required>
+    -->
+            STT: @Html.RadioButton("campus", 1)
+            STX: @Html.RadioButton("campus", 2)
 
             <!--This is the area I was trying to insert input to DB but fail-->
 
