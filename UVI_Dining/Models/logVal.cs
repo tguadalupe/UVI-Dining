@@ -6,7 +6,7 @@ using System.Data;
 
 namespace UVI_Dining.Models
 {
-    public class MYSQL_CON
+    public class logVal
     {
         public MySqlConnection Conn;
         public string FName { get; set; }
@@ -14,15 +14,16 @@ namespace UVI_Dining.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public string user_Status { get; set; }
-        public string campus_id { get; set; }
+        public string campus_loc { get; set; }
         object obj;
-        public MYSQL_CON()
+        public logVal()
         {
 
             string myConnectionString;
 
             myConnectionString = "server=127.0.0.1;uid=root;" +
                 "pwd=123@Godisgood;database=UVI_Dining";
+
 
             //Rhonda connection 
             //myConnectionString = "server=127.0.0.1;uid=root;" +
@@ -40,7 +41,7 @@ namespace UVI_Dining.Models
 
         }
 
-        public void admin_login()
+        public void Admin_login()
         {
             //  var campus_loc = Request.Form["Name"];
 
@@ -70,40 +71,42 @@ namespace UVI_Dining.Models
             cmd.ExecuteNonQuery();
 
         }
-        
+
+
 
         //For login trying
-        public void logtest()
+        public bool UserExists()
         {
             var cmd = Conn.CreateCommand() as MySqlCommand;
-            cmd.CommandText = "SELECT * FROM admins WHERE Email=@Email AND Password=@Password ";
+            cmd.CommandText = "SELECT FName,campus_loc FROM admins join campus on campus.campus_id = admins.campus_id WHERE Email=@Email AND Password=@Password";
             cmd.Parameters.AddWithValue("@Email", Email);
             cmd.Parameters.AddWithValue("@Password", Password);
 
-   
-            using (var r = cmd.ExecuteReader())
+            // try
+            using (var userDataReader = cmd.ExecuteReader())
             {
-                while(r.Read())
+                if (userDataReader.Read())
                 {
-                    Email = r["Email"].ToString();
-                    Password = r["Password"].ToString();
-                    Console.WriteLine("EMAIL : {0}\n    {1}", Email);
-                    Console.WriteLine("Password : {0}\n    {1}", Password);
-
+                    FName = userDataReader["FName"].ToString();
+                    campus_loc = userDataReader["campus_loc"].ToString();
+                    return true;
                 }
             }
+            return false;
+
         }
     }
-    }
-         
-            
-            //  cmd.ExecuteNonQuery();
-        
+}
 
 
-       
-        
-    
+
+//  cmd.ExecuteNonQuery();
+
+
+
+
+
+
 
 
 

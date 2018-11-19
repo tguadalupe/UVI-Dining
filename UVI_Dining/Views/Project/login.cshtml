@@ -1,6 +1,6 @@
 ﻿@{ Layout = ""; }
 
-@model UVI_Dining.Models.MYSQL_CON
+@model UVI_Dining.Models.logVal;
 
 @{
     ViewData["Title"] = "Admin Login";
@@ -59,8 +59,8 @@
 
 
     <!--A quick form to test. Can change-->
-    <form action="successTest" method="post">
-
+    @using (Html.BeginForm("Login", "Project", FormMethod.Post))
+    {
         <div class="container">
             <h2 class="h21">Admin Sign in</h2>
 
@@ -77,6 +77,6 @@
             <input type="submit" value="Submit" class="btn">
 
         </div>
-    </form>
+    }
 
-</body>
+    </body>

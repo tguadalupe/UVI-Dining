@@ -16,60 +16,68 @@ namespace UVI_Dining.Controllers
         }
         public IActionResult login()
         {
-                  
+
             return View();
         }
 
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult logtest(MYSQL_CON model)
+       [HttpPost]
+        public IActionResult login(logVal model)
         {
-            var log = new MYSQL_CON()
-            {      
-                Email = Request.Form["Email"],
-                Password = Request.Form["Password"]
-               
-            };
-            //this is where I'm having problem
-            
-            if (model.Email == model.Email && model.Password == model.Password)
+            var logVal = new logVal()
             {
-                return View("Login");
+                Email = model.Email,
+                Password = model.Password,
+
+            };
+
+
+            if (logVal.UserExists())
+            {
+                return View("successtest", logVal);
             }
- 
-            log.logtest();
-            return View();
+            else
+            {
+                return View("login");
+            };
+
+
         }
         //FOR THE PROJECT 
-
-
         public IActionResult SignUp()
         {
-            var testing = new MYSQL_CON();
-            testing.admin_login();
+            //  var testing = new LogValidator();
+            //testing.admin_login();
+            var worknuh = new logVal();
+            worknuh.Admin_login();
             return View();
         }
         [HttpPost]
-        public IActionResult SignUp(MYSQL_CON model)
+        //public IActionResult SignUp(LogValidator model)
+        public IActionResult SignUo(logVal model)
         {
 
-            var testing = new MYSQL_CON()
+            var worknuh = new logVal()
             {
                 FName = Request.Form["FName"],
                 LName = Request.Form["LName"],
                 Email = Request.Form["Email"],
                 Password = Request.Form["Password"],
                 user_Status = Request.Form["user_Status"]
+                //  campus_loc = Request.Form["campus_loc"]
             };
-           
-            testing.admin_login();
+
+            worknuh.Admin_login();
 
             return View();
         }
+
+
         public IActionResult successTest()
         {
             return View();
         }
+
+
     }
 }

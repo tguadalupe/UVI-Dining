@@ -12371,11 +12371,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\momo\\Desktop\\SE PROJECT\\UVI_Dining\\UVI_Dining.csproj",
+      "projectUniqueName": "C:\\Users\\momo\\Desktop\\UVI-Dining-master\\UVI-Dining-master\\UVI_Dining\\UVI_Dining.csproj",
       "projectName": "UVI_Dining",
-      "projectPath": "C:\\Users\\momo\\Desktop\\SE PROJECT\\UVI_Dining\\UVI_Dining.csproj",
+      "projectPath": "C:\\Users\\momo\\Desktop\\UVI-Dining-master\\UVI-Dining-master\\UVI_Dining\\UVI_Dining.csproj",
       "packagesPath": "C:\\Users\\momo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\momo\\Desktop\\SE PROJECT\\UVI_Dining\\obj\\",
+      "outputPath": "C:\\Users\\momo\\Desktop\\UVI-Dining-master\\UVI-Dining-master\\UVI_Dining\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
