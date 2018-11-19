@@ -48,13 +48,13 @@ namespace UVI_Dining.Controllers
         {
             //  var testing = new LogValidator();
             //testing.admin_login();
-            var worknuh = new logVal();
-            worknuh.Admin_login();
+            //var worknuh = new logVal();
+            //worknuh.Admin_login();
             return View();
         }
         [HttpPost]
         //public IActionResult SignUp(LogValidator model)
-        public IActionResult SignUo(logVal model)
+        public IActionResult SignUp(logVal model)
         {
 
             var worknuh = new logVal()
@@ -63,7 +63,9 @@ namespace UVI_Dining.Controllers
                 LName = Request.Form["LName"],
                 Email = Request.Form["Email"],
                 Password = Request.Form["Password"],
-                user_Status = Request.Form["user_Status"]
+                user_Status = Request.Form["user_Status"],
+                campus_id = int.Parse(Request.Form["campus"])
+
                 //  campus_loc = Request.Form["campus_loc"]
             };
 

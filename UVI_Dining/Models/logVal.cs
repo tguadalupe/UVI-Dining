@@ -14,8 +14,9 @@ namespace UVI_Dining.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public string user_Status { get; set; }
+        public int campus_id { get; set; }
         public string campus_loc { get; set; }
-        object obj;
+        
         public logVal()
         {
 
@@ -47,12 +48,14 @@ namespace UVI_Dining.Models
 
             var cmd = Conn.CreateCommand() as MySqlCommand;
             // MySqlCommand cmdd = new MySqlCommand("SELECT campus", Conn);
-            cmd.CommandText = "INSERT INTO admins(FName,LName,Email,Password,user_Status,campus_id) values(@FName,@LName,@Email,@Password,@user_Status,1)";
+            
+            cmd.CommandText = "INSERT INTO admins(FName,LName,Email,Password,user_Status,campus_id) values(@FName,@LName,@Email,@Password,@user_Status,@campus_id)";
             cmd.Parameters.AddWithValue("@FName", FName);
             cmd.Parameters.AddWithValue("@LName", LName);
             cmd.Parameters.AddWithValue("@Email", Email);
             cmd.Parameters.AddWithValue("@Password", Password);
             cmd.Parameters.AddWithValue("@user_Status", user_Status);
+            cmd.Parameters.AddWithValue("@campus_id", campus_id);
 
 
 
@@ -71,7 +74,7 @@ namespace UVI_Dining.Models
             cmd.ExecuteNonQuery();
 
         }
-
+         
 
 
         //For login trying

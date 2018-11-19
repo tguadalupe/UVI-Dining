@@ -16,7 +16,7 @@ Email VARCHAR(45),
 Password VARCHAR(45),
 user_Status VARCHAR(45),
 campus_id INT NOT NULL,
-PRIMARY KEY(admin_id),
+PRIMARY KEY(admin_id,campus_id),
 FOREIGN KEY (campus_id) references Campus(campus_id),
 UNIQUE (Email));
 
@@ -52,7 +52,7 @@ menu_id INT NOT NULL,
 PRIMARY KEY(MDate,Meal,menu_id),
 FOREIGN KEY (campus_id) references Campus(campus_id));
 
-INSERT INTO campus(campus_loc) values('STT');
+INSERT INTO campus(campus_loc) values('STT'),('STX');
 INSERT INTO admins (FName,LName,Email,Password,user_Status,campus_id) VALUES('fish','cat','t@yahoo.com','123po','student',1);
 
 
