@@ -19,8 +19,10 @@
 </head>
 
 <body>
-    <a href="/Project/successTest">Admin Home</a> <b>|</b>
-    <a href="/Project/SignUp">Add a User</a>
+
+   
+    <a href="/Project/SignUp">Add a User</a><b>|</b>
+    <a href="/Project/index">Log Out</a>
     <div class="container">
         <!--A quick form to test. Can change-->
         <form method="post">
@@ -30,7 +32,7 @@
             <h3 class="h3">Add a Wroker</h3>
 
             <!--<p class="paragraph"> Already have an admin account? <a href="/Project/login">Sign in.</a> </p>
-        -->
+            -->
             <label for="Fname"><b>First Name</b></label>
             <input type="text" name="FName" class="ipt" value="" required>
 
@@ -50,7 +52,7 @@
             <br>
             <br>
             <!--   <input type="number" name="campus" class="ipt" required>
-    -->
+            -->
             STT: @Html.RadioButton("campus", 1)
             STX: @Html.RadioButton("campus", 2)
 
