@@ -81,7 +81,7 @@ namespace UVI_Dining.Models
         public bool UserExists()
         {
             var cmd = Conn.CreateCommand() as MySqlCommand;
-            cmd.CommandText = "SELECT FName,campus_loc FROM admins join campus on campus.campus_id = admins.campus_id WHERE Email=@Email AND Password=@Password";
+            cmd.CommandText = "SELECT FName,user_Status,campus_loc FROM admins join campus on campus.campus_id = admins.campus_id WHERE Email=@Email AND Password=@Password";
             cmd.Parameters.AddWithValue("@Email", Email);
             cmd.Parameters.AddWithValue("@Password", Password);
 
@@ -91,6 +91,7 @@ namespace UVI_Dining.Models
                 if (userDataReader.Read())
                 {
                     FName = userDataReader["FName"].ToString();
+                    user_Status = userDataReader["user_Status"].ToString();
                     campus_loc = userDataReader["campus_loc"].ToString();
                     return true;
                 }
