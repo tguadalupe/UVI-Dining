@@ -80,6 +80,29 @@ namespace UVI_Dining.Controllers
             return View();
         }
 
+         public IActionResult menu()
+        {
+            return View();
+        }
+           public IActionResult contact()
+        {
+            return View();
+        }
+
+           public IActionResult aboutus()
+        {
+            return View();
+        }
+           public IActionResult location()
+        {
+            return View();
+        }
+           public IActionResult hours()
+        {
+            return View();
+        }
+         
+
 
     }
 }
