@@ -6,28 +6,34 @@
 
 div.header {
     position: absolute;
-    top: 4px;
+    top: 10px;
     left: 9px;
 }
 
 .logo {
     float: left;
-    height: 60px;
-    width: 60px;
+    height: 110px;
+    width: 150px;
 }
 
-#h41{
-    float:left;
-    padding-left:4px;
-    color:white;
+
+
+#greenbar {
+    margin: -36px auto;
+    background: #f4ca41;
+    border: 1px solid #f4ca41;
+    height: 40px;
+    padding-left:20px;
 }
 
+
+/*---- top navigation bar */
 
 .nav{
-    height:48px;
+    height:52px;
     background-color:42f4bf;
     margin-top:-30px;
-    padding-left:150;
+    padding-left:160px;
     
 }
 
@@ -38,11 +44,12 @@ list-style:none;
 .nav ul li a{
     float:left;
     text-decoration:none;
+    font-family:Helvetica;
     color:white;
     padding:0px 40px;
     text-align:center;
-    line-height:48px;
-    height:48px;
+    line-height:52px;
+    height:52px;
     font-size: 18px;
 }
 
@@ -59,22 +66,26 @@ list-style:none;
     color:aqua;
 }
 
-
+/* bottom navigation bar */
 
 div.navi1 {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    margin-top:-15px;
+    background-color:#f4ca41;
+    margin-top:80px;
     margin-bottom:3px;
    
 }
 
     .navi1 a {
-        float: right;
-        padding: 6px;
-        font-size: 11px;
         overflow: hidden;
+        float: left;
+        display:block;
+        color:white;
+        padding: 10px;
+        font-size: 18px;
+        
         
     }
 
@@ -87,13 +98,7 @@ div.navi1 {
 
 
 
-#greenbar {
-    width: 100%;
-    margin: -36px auto;
-    background: #f4ca41;
-    border: 1px solid #f4ca41;
-    height: 40px;
-}
+
 
 #greenbar2 {
     width: 100%;
@@ -106,77 +111,169 @@ div.navi1 {
 
 #greenbar3 {
     width: 100%;
-    margin: 20px auto;
+    margin: 10px auto;
     background: lightgrey;
     border: 10 solid lightgray;
     height: 1.4px;
 }
-/* Stt & Stx pics */
+
+/* Stt & Stx buttons */
   
- 
-  
-  .img-valign {
-    vertical-align: middle;
-    margin-top:10px;
-    margin-bottom: 0.75em;
-    padding-left:32%;
-   
-    
-  }
-  .img-valigntwo {
-    vertical-align: middle;
-    margin-top:10px;
-    margin-bottom: 0.75em;
-    padding-left:90px;
-   
-    
-  }
-  
-  .text1 {
-    font-size: 44px;
-  }
-  .text2 {
-    font-size: 24px;
-     
-  }
+   .btn
+{
 
-  
-
-  
-/* Slideshow CSS*/
-
-#slide{
-	width:100%;
-	}
-
-    
-
-.slides {
-
-}
-
-/*
-.container {
-    width: 100%;   
     position: relative;
-	margin: 0px;
-
+    width: 195px;
+    height: 60px;
+	margin-bottom:10px;
+    padding: 0 10px;
+    text-align: left;
+    left:32%;
+    font-size: 16px;
+    color:white;
+    background: rgb(78, 78, 197);
+    border-radius: 18px
 }
 
-*/
+#btn_container
+{
+    margin: 3.5px 0 0 0;
+    width:50px;
+    height:50px; 
+    border-radius:5px;
+    background:white; 
+    float:left;
+}
+
+
+
+.btn img 
+{  
+	margin: 2.5px;
+}
+
+
+.btn span
+{
+	display:inline-block;
+    width: 120px;
+    line-height: 55px;
+    text-indent: 10px;
+}
+
+.btn2
+{
+
+    position: relative;
+    width: 195px;
+    height: 60px;
+	margin-bottom:20px;
+    padding: 0 10px;
+    text-align: left;
+    left:38%;
+    font-size: 16px;
+    color:white;
+    background: rgb(78, 78, 197);
+    border-radius: 18px
+}
+
+#btn_container2
+{
+    margin: 3.5px 0 0 0;
+    width:50px;
+    height:50px; 
+    border-radius:5px;
+    background:white; 
+    float:left;
+   
+}
+
+.btn2 img 
+{  
+	margin: 2.5px;
+}
+
+
+.btn2 span
+{
+	display:inline-block;
+    width: 120px;
+    line-height: 55px;
+    text-indent: 10px;
+}
 
 
 
 
 
+/* Slideshow CSS */
+
+.picslides {
+    display: none;
+    padding: 0px;
+    text-align: center;
+    height: auto;
+    }
+    /* Slideshow container */
+    .slideshow-container {
+    position: relative;
+    margin: auto;
+    background-color: #f7f2e7;
+    }
+    /* Next & previous buttons */
+    .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 90px 3px 0;
+    }
+    /* Position the "next button" to the right */
+    .next {
+    right: 0;
+    border-radius: 90px 0 0 3px;
+    }
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+ 
+    background-color: rgb(169, 199, 189);
+    }	
+    
+    
+   
+    .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    }
+    .active, .dot:hover {
+    background-color: rgb(243, 239, 226);
+    }
+   
+
+    .dot-container {
+    text-align: center;
+    padding: 3px;
+    background: #c8f3e8;
+    }
+     
 
 
-
-
-
-  
-
-
-
-  
-  
+    
+    #greenbar4 {
+        width: 100%;
+        margin: -20px auto;
+        background: #c8f3e8;
+        height: 45px;
+    }
