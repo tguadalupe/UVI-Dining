@@ -1,0 +1,141 @@
+﻿@{ Layout = ""; }
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Movie List";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="~/css/index.css" /> ‌
+
+
+
+
+</head>
+
+<body>
+
+    <!--- Logo ---->
+
+
+    <div class="header">
+        <img src="~/images/uvilogo3.png" alt="UVI logo" title="UVI logo" class="logo" />
+
+
+
+    </div>
+
+    <br id="greenbarheight"> </br>
+
+    <div id="greenbar"></div>
+
+    <div class="nav">
+        <ul>
+            <li> <a href="/Project/Index">Home</a> </li>
+            <li> <a href="/Project/Menu">Menu</a> </li>
+            <li> <a href="/Project/contact">Contact</a> </li>
+            <li> <a href="/Project/aboutus">About Us</a> </li>
+
+        </ul>
+    </div>
+
+    <br id="greenbarheight2"> </br>
+
+    <div id="greenbar2"></div>
+
+    <br id="greenbarheight3"> </br>
+
+    <div id="greenbar3"></div>
+
+
+
+    <!-----Stt & Stx page -->
+
+    <button class="btn">
+        <div id="btn_container"><img src="~/images/hambur.png" width="45" height="45" /></div>
+        <span>St. Thomas</span>
+    </button>
+
+    <button class="btn2">
+        <div id="btn_container2"><img src="~/images/fishy.png" width="45" height="45" /></div>
+        <span>St. Croix</span>
+    </button>
+
+
+
+    <br id="greenbarheight4"> </br>
+
+    <div id="greenbar4"></div>
+
+
+    <!----- Slideshow ---->
+
+    <div class="slideshow-container">
+
+        <div class="picslides">
+            <div class="piccies"> <img src="~/images/slide1.jpg" style="width:1110;height:370;"> </div>
+
+        </div>
+
+        <div class="picslides">
+            <div class="piccies"> <img src="~/images/slide2.jpg" style="width:1110;height:370;"> </div>
+
+        </div>
+
+        <div class="picslides">
+
+            <div class="piccies"> <img src="~/images/slide3.png" style="width:1110;height:370;"> </div>
+
+        </div>
+
+        <div class="picslides">
+
+            <div class="piccies"> <img src="~/images/slide4.jpg" style="width:1110;height:370;"> </div>
+
+        </div>
+
+    </div>
+    <a id="a-prev" class="prev" style="color:#996966" onclick="plusPics(-1)">❮</a>
+    <a id="a-next" class="next" style="color:#996966" onclick="plusPics(1)">❯</a>
+
+    </div>
+    <div class="dot-container">
+        <div style="text-align:center">
+            <span class="dot" onclick="currentPics(1)"></span>
+            <span class="dot" onclick="currentPics(2)"></span>
+            <span class="dot" onclick="currentPics(3)"></span>
+            <span class="dot" onclick="currentPics(4)"></span>
+
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!--- other navigation bar -->
+
+    <div class="navi1">
+        <a href="/Project/login">Sign in</a>
+        <a href="/Project/location">Location</a>
+        <a href="/Project/hours">Hours of Operation</a>
+
+
+
+    </div>
+
+
+
+    <!-- JS link -->
+    <script src="~/js/index.js" type="text/javascript"></script>
+
+
+
+
+
+
+</body>
+
+

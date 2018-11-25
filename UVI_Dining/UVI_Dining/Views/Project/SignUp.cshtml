@@ -1,0 +1,70 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{ Layout = ""; }
+
+
+@model UVI_Dining.Models.logVal
+@{
+    ViewData["Title"] = "Admin Login";
+
+}
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="~/css/signup.css" /> ‌
+
+</head>
+
+<body>
+
+
+    <h1>Welcome @Session["FName"] !</h1>
+    <h1>Welcome @Session["campus_loc"] !</h1>
+    <h1>Welcome @Session["user_Status"] !</h1>
+
+    <a href="/Project/SignUp">Add a User</a><b>|</b>
+    <a href="/Project/index">Log Out</a>
+    <div class="container">
+        <!--A quick form to test. Can change-->
+        <form method="post">
+
+
+            <img src="~/images/uvilogo.png" alt="UVI logo" title="UVI logo" />
+            <h3 class="h3">Add a Wroker</h3>
+
+            <!--<p class="paragraph"> Already have an admin account? <a href="/Project/login">Sign in.</a> </p>
+            -->
+            <label for="Fname"><b>First Name</b></label>
+            <input type="text" name="FName" class="ipt" value="" required>
+
+            <label for="Lname"><b>Last Name</b></label>
+            <input type="text" name="LName" class="ipt" value="" required>
+
+            <label for="Email"><b>Email</b></label>
+            <input type="email" name="Email" class="ipt" value="" required>
+
+            <label for="Password"><b>Password</b></label>
+            <input type="password" name="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}" class="ipt" value="" required title="Sorry, password must have one number, one capital and lowercase letter, and at least 8 or more characters.">
+
+            <label for="user_Status"><b>Status</b></label>
+            <input type="text" name="user_Status" class="ipt" value="" required>
+
+            <label for="campus"><b>Campus</b></label>
+            <br>
+            <br>
+            <!--   <input type="number" name="campus" class="ipt" required>
+            -->
+            STT: @Html.RadioButton("campus", 1)
+            STX: @Html.RadioButton("campus", 2)
+
+            <!--This is the area I was trying to insert input to DB but fail-->
+
+
+            <input type="submit" value="Submit" class="btn">
+
+        </form>
+    </div>
+</body>

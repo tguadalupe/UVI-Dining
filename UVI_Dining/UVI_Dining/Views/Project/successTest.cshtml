@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{ Layout = ""; }
+@model UVI_Dining.Models.logVal
+@using UVI_Dining.Models
+@{
+    ViewData["Title"] = "Admin Login";
+
+}
+
+<h2>
+    testing if it can read and output data
+</h2>
+
+<h1>Welcome @Session["FName"] !</h1>
+<h1>Welcome @Session["campus_loc"] !</h1>
+<h1>Welcome @Session["user_Status"] !</h1>
+
+<a href="/Project/SignUp">Add a User</a><b>|</b>
+<a href="/Project/index">Log Out</a>
+<a href="/Project/successTest">Home</a>
+
+        <!--NONSENSE test-->
+      
+@*@(Session["model"] as logVal).FName*@

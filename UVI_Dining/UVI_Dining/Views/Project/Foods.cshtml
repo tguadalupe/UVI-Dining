@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+@model UVI_Dining.Models.logVal
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h1>Welcome @Session["FName"] !</h1>
+        <h1>Campus @Session["campus_loc"] !</h1>
+        <h1>Status @Session["user_Status"] !</h1>
+       
+        <p>-------------------------------------------</p>
+        
+        <table>
+           @foreach (var food in ViewBag.foods)
+            {
+            <tr>
+                <th>@food.food_id</th>
+                <th>@food.food_name</th>
+                <th>@food.food_category</th>
+                
+            </tr>
+           }
+        </table>
+    </div>
+</body>
+</html>
