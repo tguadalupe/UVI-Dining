@@ -104,6 +104,7 @@ namespace UVI_Dining.Controllers
         {
             return View();
         }
+        //Foods
         public ActionResult Foods(logVal model)
         {
             var l = new logVal();

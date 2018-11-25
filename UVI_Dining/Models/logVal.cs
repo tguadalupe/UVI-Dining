@@ -18,7 +18,7 @@ namespace UVI_Dining.Models
         public int campus_id { get; set; }
         public string campus_loc { get; set; }
 
-        //----------Foods-----------//
+      
 
       
         public logVal()
@@ -112,8 +112,11 @@ namespace UVI_Dining.Models
                 this.campus_id = campus_id;
             }
         }
+
+        //----------Foods-----------//
         public List<Food> GetFood()
         {
+            //created list for Foods
             List<Food> foods = new List<Food>();
             var cmd = Conn.CreateCommand() as MySqlCommand;
             cmd.CommandText = "SELECT food_id,food_name, food_category, campus_id FROM foods WHERE campus_id=@campus_id";
