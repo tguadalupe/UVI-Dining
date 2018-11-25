@@ -12,21 +12,25 @@
 <body>
     <div>
         <h1>Welcome @Session["FName"] !</h1>
-        <h1>Campus @Session["campus_loc"] !</h1>
-        <h1>Status @Session["user_Status"] !</h1>
-       
+        <h1>Campus: @Session["campus_loc"] </h1>
+        <h1>Status: @Session["user_Status"]</h1>
+
+        <a href="/Project/successTest">Home</a><b>|</b>
+        <a href="/Project/SignUp">Add a User</a><b>|</b>
+        <a href="/Project/index">Log Out</a><b>|</b>
+        <a href="/Project/Foods">Foods</a>
         <p>-------------------------------------------</p>
-        
+
         <table>
-           @foreach (var food in ViewBag.foods)
+            @foreach (var food in ViewBag.foods)
             {
-            <tr>
-                <th>@food.food_id</th>
-                <th>@food.food_name</th>
-                <th>@food.food_category</th>
-                
-            </tr>
-           }
+                <tr>
+                    <th>@food.food_id</th>
+                    <th>@food.food_name</th>
+                    <th>@food.food_category</th>
+
+                </tr>
+            }
         </table>
     </div>
 </body>
