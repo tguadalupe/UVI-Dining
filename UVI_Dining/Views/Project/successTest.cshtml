@@ -9,17 +9,75 @@
 
 }
 
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="~/css/successTest.css" /> ‌
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+</head>
 
 
-<h1>Welcome @Session["FName"] !</h1>
-<h1>Campus: @Session["campus_loc"] </h1>
-<h1>Status: @Session["user_Status"] </h1>
+<body>
 
-<a href="/Project/successTest">Home</a><b>|</b>
-<a href="/Project/SignUp">Add a User</a><b>|</b>
-<a href="/Project/index">Log Out</a><b>|</b>
-<a href="/Project/Foods">Foods</a><b> | </b>
-<a href="/Project/addFoods">Add Food</a>
+    <!--- Logo ---->
+    <!--- Logo -->
 
-<!--NONSENSE test-->
-@*@(Session["model"] as logVal).FName*@
+    <div class="header">
+        <img src="~/images/uvilogo3.png" alt="UVI logo" title="UVI logo" class="logo" />
+
+    </div>
+    <br id="greenbarheight"> </br>
+
+    <div id="greenbar"></div>
+
+
+
+    <br id="greenbarheight2"> </br>
+
+    <div id="greenbar2"></div>
+
+
+
+    <br id="greenbarheight3"> </br>
+
+    <div id="greenbar3"></div>
+
+
+    <br id="greenbarheight4"> </br >
+
+    <div id="greenbar4"> </div>
+
+
+    <div class="sidebarcontainer">
+        <div class="sidebarnav">
+            <div class="sidebar-text">
+                <h4>
+                    <i class="fas fa-user-circle"> Welcome, @Session["FName"] </i>
+                    <br />
+                    <br />
+                    Campus: @Session["campus_loc"]
+
+                    Status: @Session["user_Status"]
+                </h4>
+            </div>
+            <ul class="sidebarnav2">
+                <li> <i class="fa fa-home"></i>  <a href="/Project/Index">Home</a></li>
+                <li> <i class="fa fa-address-card">  </i><a href="/Project/SignUp">Add User</a></li>
+                <li> <i class="fas fa-power-off">  </i><a href="/Project/index">Log Out</a></li>
+                <li> <i class="fas fa-plus">  </i><a href="/Project/Foods">Food</a></li>
+                <li> <i class="fas fa-plus">  </i><a href="/Project/addFoods">Add Food</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!--NONSENSE test-->
+    @*@(Session["model"] as logVal).FName*@
+
+</body>
