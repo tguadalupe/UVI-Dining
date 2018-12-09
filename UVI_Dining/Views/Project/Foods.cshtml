@@ -18,10 +18,19 @@
         <a href="/Project/successTest">Home</a><b>|</b>
         <a href="/Project/SignUp">Add a User</a><b>|</b>
         <a href="/Project/index">Log Out</a><b>|</b>
-        <a href="/Project/Foods">Foods</a>
+        <a href="/Project/Foods">Foods</a><b> | </b>
+        <a href="/Project/addFoods">Add Food</a>
         <p>-------------------------------------------</p>
 
+
+        <h2>Food not there? Go to: <a href="/Project/addFoods">Add Food</a> to add a food to the list.</h2>
         <table>
+            <tr>
+                <th>Food id</th>
+                <th>Foods Name</th>
+                <th>Categories</th>
+
+            </tr>
             @foreach (var food in ViewBag.foods)
             {
                 <tr>
