@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+@model UVI_Dining.Models.logVal
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h1>Welcome @Session["FName"] !</h1>
+        <h1>Campus: @Session["campus_loc"] </h1>
+        <h1>Status: @Session["user_Status"]</h1>
+
+        <a href="/Project/successTest">Home</a><b>|</b>
+        <a href="/Project/SignUp">Add a User</a><b>|</b>
+        <a href="/Project/index">Log Out</a><b>|</b>
+        <a href="/Project/Foods">Foods</a><b> | </b>
+        <a href="/Project/addFoods">Add Food</a>
+        <p>-------------------------------------------</p>
+        <h2>Add Food to the Food tables</h2>
+        <h3>(Note: write whatever you want that user might like to read)</h3>
+        <form method="post">
+            Name of Food: <input type="text" name="food_name" />
+            <br><br/>
+            Food Category (Ex: Meat, Dairy): <input type="text" name="food_category" value="" required />
+           <br><br />
+            <input type="submit" value="Submit" class="btn">
+
+        </form>
+        <br ><br />
+        <a href="/Project/Foods">Go back to food list</a>
+    </div>
+</body>
+</html>
