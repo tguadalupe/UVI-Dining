@@ -112,6 +112,26 @@ namespace UVI_Dining.Controllers
             ViewBag.Foods = l.GetFood();
             return View();
         }
+        //adding foods
+        public ActionResult addFoods()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult addFoods(logVal model)
+        {
+            var food = new logVal()
+            {
+
+                campus_id = int.Parse(Session["campus_id"].ToString()),
+                food_name = Request.Form["food_name"],
+                food_category = Request.Form["food_category"]
+                
+            };
+            food.InsertFood();
+            return View();
+        }
 
 
 
