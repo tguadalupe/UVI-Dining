@@ -18,7 +18,9 @@ namespace UVI_Dining.Models
         public int campus_id { get; set; }
         public string campus_loc { get; set; }
 
-      
+//------Food var ------///
+public string food_name { get; set; }
+public string food_category { get; set; }
 
       
         public logVal()
@@ -131,6 +133,17 @@ namespace UVI_Dining.Models
             return foods;
 
         }
+        //-----Adding Foods----//
+       public void InsertFood()
+        {
+            var cmd = Conn.CreateCommand() as MySqlCommand;
+            cmd.CommandText = "INSERT INTO Foods(food_name,food_category,campus_id) values(@food_name,@food_category,@campus_id)";
+            cmd.Parameters.AddWithValue("@food_name",food_name);
+            cmd.Parameters.AddWithValue("@food_category",food_category);
+            cmd.Parameters.AddWithValue("@campus_id", campus_id);
+
+            cmd.ExecuteNonQuery();
+        }
         
        
     }
@@ -138,6 +151,7 @@ namespace UVI_Dining.Models
              
       
 }
+
 
 
 
