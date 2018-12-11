@@ -30,8 +30,6 @@ public string food_category { get; set; }
 
             myConnectionString = "server=127.0.0.1;uid=root;" +
                 "pwd=123@Godisgood;database=UVI_Dining";
-
-
             //Rhonda connection 
             //myConnectionString = "server=127.0.0.1;uid=root;" +
             //  "pwd=PUTyourDBpassword;database=UVI_Dining";
@@ -43,18 +41,12 @@ public string food_category { get; set; }
             }
             catch (MySqlException ex)
             {
-
             }
-
         }
 
         public void Admin_login()
         {
-            //  var campus_loc = Request.Form["Name"];
-
             var cmd = Conn.CreateCommand() as MySqlCommand;
-            // MySqlCommand cmdd = new MySqlCommand("SELECT campus", Conn);
-
             cmd.CommandText = "INSERT INTO admins(FName,LName,Email,Password,user_Status,campus_id) values(@FName,@LName,@Email,@Password,@user_Status,@campus_id)";
             cmd.Parameters.AddWithValue("@FName", FName);
             cmd.Parameters.AddWithValue("@LName", LName);
@@ -63,7 +55,6 @@ public string food_category { get; set; }
             cmd.Parameters.AddWithValue("@user_Status", user_Status);
             cmd.Parameters.AddWithValue("@campus_id", campus_id);
             cmd.ExecuteNonQuery();
-
         }
 
 
@@ -72,15 +63,11 @@ public string food_category { get; set; }
         public bool UserExists()
         {
             var cmd = Conn.CreateCommand() as MySqlCommand;
-            var cmd1 = Conn.CreateCommand() as MySqlCommand;
             cmd.CommandText = "SELECT FName,user_Status,campus_loc, campus.campus_id FROM admins join campus on campus.campus_id = admins.campus_id WHERE Email=@Email AND Password=@Password";
-            //  cmd1.CommandText = "SELECT food_name,food_category FROM foods";
             cmd.Parameters.AddWithValue("@Email", Email);
             cmd.Parameters.AddWithValue("@Password", Password);
-
             // try
             using (var userDataReader = cmd.ExecuteReader())
-            // using (var userDataReader1 = cmd1.ExecuteReader())
             {
                 if (userDataReader.Read())
                 {
@@ -88,11 +75,6 @@ public string food_category { get; set; }
                     user_Status = userDataReader["user_Status"].ToString();
                     campus_loc = userDataReader["campus_loc"].ToString();
                     campus_id = int.Parse(userDataReader["campus_id"].ToString());
-                    
-                    //testing foods table
-                    // food_name = userDataReader["food_name"].ToString();
-                    // food_category = userDataReader["food_category"].ToString();
-
                     return true;
                 }
             }
@@ -127,12 +109,13 @@ public string food_category { get; set; }
             using (var dr = cmd.ExecuteReader())
             {
                 while (dr.Read()) {
-                    foods.Add(new Food(int.Parse(dr["food_id"].ToString()), dr["food_name"].ToString(), dr["food_category"].ToString(), int.Parse(dr["campus_id"].ToString())));
+                    foods.Add(new Food(int.Parse(dr["food_id"].ToString()), dr["food_name"].ToString(),
+                        dr["food_category"].ToString(), int.Parse(dr["campus_id"].ToString())));
                 }
             }
             return foods;
-
         }
+
         //-----Adding Foods----//
        public void InsertFood()
         {
@@ -141,7 +124,6 @@ public string food_category { get; set; }
             cmd.Parameters.AddWithValue("@food_name",food_name);
             cmd.Parameters.AddWithValue("@food_category",food_category);
             cmd.Parameters.AddWithValue("@campus_id", campus_id);
-
             cmd.ExecuteNonQuery();
         }
         

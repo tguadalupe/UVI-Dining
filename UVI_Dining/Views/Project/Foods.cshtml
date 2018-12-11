@@ -8,20 +8,53 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title></title>
+    <link rel="stylesheet" type="text/css" href="~/css/foods.css" /> ‌
 </head>
 <body>
     <div>
+
+        <div class="header">
+            <img src="~/images/uvilogo3.png" alt="UVI logo" title="UVI logo" class="logo" />
+
+        </div>
+        <br id="greenbarheight"> </br>
+
+        <div id="greenbar"></div>
+
+
+
+        <br id="greenbarheight2"> </br>
+
+        <div id="greenbar2"></div>
+
+
+
+        <br id="greenbarheight3"> </br>
+
+        <div id="greenbar3"></div>
+
+
+        <br id="greenbarheight4"> </br >
+
+        <div id="greenbar4"> </div>
+       
+        <div class="nav">
+            <ul>
+                <li> <i class="fa fa-home"></i>  <a href="/Project/Index">Home</a></li>
+                <li> <i class="fa fa-address-card">  </i><a href="/Project/SignUp">Add User</a></li>
+                <li> <i class="fas fa-power-off">  </i><a href="/Project/index">Log Out</a></li>
+                <li> <i class="fas fa-plus">  </i><a href="/Project/Foods">Food</a></li>
+                <li> <i class="fas fa-plus">  </i><a href="/Project/addFoods">Add Food</a></li>
+
+            </ul>
+
+        </div>
+        <p>-------------------------------------------</p>
+        <br><br/>
+        <p id="breakpoint"></p>
         <h1>Welcome @Session["FName"] !</h1>
         <h1>Campus: @Session["campus_loc"] </h1>
         <h1>Status: @Session["user_Status"]</h1>
-
-        <a href="/Project/successTest">Home</a><b>|</b>
-        <a href="/Project/SignUp">Add a User</a><b>|</b>
-        <a href="/Project/index">Log Out</a><b>|</b>
-        <a href="/Project/Foods">Foods</a><b> | </b>
-        <a href="/Project/addFoods">Add Food</a>
-        <p>-------------------------------------------</p>
-
 
         <h2>Food not there? Go to: <a href="/Project/addFoods">Add Food</a> to add a food to the list.</h2>
         <table>

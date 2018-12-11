@@ -17,7 +17,6 @@ namespace UVI_Dining.Controllers
         }
         public ActionResult login()
         {
-
             return View();
         }
 
@@ -31,8 +30,6 @@ namespace UVI_Dining.Controllers
                 Password = model.Password,
 
             };
-
-
             if (logVal.UserExists())
             {
                 Session["FName"] = logVal.FName;
@@ -45,20 +42,16 @@ namespace UVI_Dining.Controllers
             {
                 return View("login");
             };
-
-
         }
+
         //FOR THE PROJECT 
         public ActionResult SignUp()
         {
-
             return View();
         }
         [HttpPost]
-        //public ActionResult SignUp(LogValidator model)
         public ActionResult SignUp(logVal model)
         {
-
             var worknuh = new logVal()
             {
                 FName = Request.Form["FName"],
@@ -67,12 +60,8 @@ namespace UVI_Dining.Controllers
                 Password = Request.Form["Password"],
                 user_Status = Request.Form["user_Status"],
                 campus_id = int.Parse(Request.Form["campus"])
-
-                //  campus_loc = Request.Form["campus_loc"]
             };
-
             worknuh.Admin_login();
-
             return View();
         }
 
@@ -112,10 +101,10 @@ namespace UVI_Dining.Controllers
             ViewBag.Foods = l.GetFood();
             return View();
         }
-        //adding foods
+
+        //Adding foods
         public ActionResult addFoods()
         {
-
             return View();
         }
         [HttpPost]
@@ -123,17 +112,12 @@ namespace UVI_Dining.Controllers
         {
             var food = new logVal()
             {
-
                 campus_id = int.Parse(Session["campus_id"].ToString()),
                 food_name = Request.Form["food_name"],
-                food_category = Request.Form["food_category"]
-                
+                food_category = Request.Form["food_category"]   
             };
             food.InsertFood();
             return View();
         }
-
-
-
     }
 }
